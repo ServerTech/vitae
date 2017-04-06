@@ -1,0 +1,343 @@
+% Shreyas' Curriculum Vitae
+% Updated 6th April, 2017
+% Author: Shreyas Vinod
+% Email: shreyas@shreyasvinod.me
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT SETUP %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{article}
+
+% ESSENTIALS
+
+\def \mytitle{Shreyas Vinods' Curriculum Vitae}
+\def \myname{Shreyas Vinod}
+\def \myemail{shreyas@shreyasvinod.me}
+\def \myweb{https://shreyasvinod.me}
+\def \myphone{+48 570 898 920}
+\def \mygithub{https://github.com/servertech}
+\def \mygitname{servertech}
+\def \mylinkedin{https://linkedin.com/in/shreyasvinod}
+\def \mylinkedinname{shreyasvinod}
+
+\def \mykeywords{
+  shreyas,
+  vinod,
+  shreyas vinod,
+  resume,
+  curriculum,
+  vitae,
+  curriculum vitae
+}
+
+% END ESSENTIALS
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Use Garamond (gael-varoquaux.info/science/garamond-fonts-for-latex.html)
+% Find \garamond in the file to enable/disable use.
+
+\usepackage{garamond}
+
+\usepackage{calc}
+\usepackage{changepage}
+
+\reversemarginpar
+
+\usepackage[
+  paper=a4paper,
+  marginparwidth=30.5mm,
+  marginparsep=1.5mm,
+  margin=20mm,
+  includemp
+]{geometry}
+
+\setlength{\parindent}{0cm}
+
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+
+% FOOTER
+
+\lfoot{
+  \hspace{\footpageshift}
+  \parbox{4in}{\, \hfill
+  \scriptsize \garamond Last updated on \today \ungaramond
+  ~ \textbullet ~
+  \scriptsize \garamond Typeset in \LaTeX \ungaramond
+  \hfill \, \arabic{page} of \protect\pageref*{LastPage}}
+}
+
+% END FOOTER
+
+\usepackage{xcolor,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{
+  colorlinks,breaklinks,
+  linkcolor=darkblue,urlcolor=darkblue,
+  anchorcolor=darkblue,citecolor=darkblue,
+  unicode,
+  pdftitle={\mytitle},
+  pdfauthor={\myname},
+  pdfkeywords={\mykeywords}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HELPER COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The section headings
+%
+% Usage: \section{section name}
+
+\renewcommand{\section}[1]{\pagebreak[3]%
+  \hyphenpenalty=10000%
+  \vspace{1.3\baselineskip}%
+  \phantomsection\addcontentsline{toc}{section}{#1}%
+  \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+  \vspace{-\baselineskip}\par}
+
+% An itemize-style list with lots of space between items
+
+\newenvironment{outerlist}[1][\quad\textbullet]%
+  {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+  \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+
+\newenvironment{lonelist}[1][\quad\textbullet]%
+  {\begin{list}{#1}{%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\topsep}{0pt}}}
+  {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+
+\newenvironment{innerlist}[1][\quad\textbullet]%
+  {\vspace{3mm}\begin{itemize}[
+    #1,leftmargin=*,parsep=0pt,itemsep=1pt,topsep=0pt,partopsep=0pt
+  ]}
+  {\end{itemize}\vspace{3mm}}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+
+\newenvironment{loneinnerlist}[1][\quad\textbullet]%
+  {\begin{itemize}[
+    #1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt
+  ]}
+  {\end{itemize}\vspace{-.6\baselineskip}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{adjustwidth}{-\marginparsep-\marginparwidth}{}
+  {\Huge \garamond Shreyas Vinod}
+  \hfill
+  \begin{minipage}[b]{3.5cm}
+    \flushbottom \flushleft \small \garamond
+    ul. \.Zeromskiego 1/133 \\ \vspace{2pt}
+    01-887 Warszawa, PL
+  \end{minipage}
+  \begin{minipage}[b]{4cm}
+    \flushright \small \garamond
+    \href{\mygithub}{\mygitname} \\ \vspace{2pt}
+    \href{\mylinkedin}{\mylinkedinname} \\ \vspace{2pt}
+    \href{tel:\myphone}{\myphone} \\ \vspace{2pt}
+    \href{\myweb}{\myweb} \\ \vspace{2pt}
+    \href{mailto:\myemail}{\myemail}
+  \end{minipage}
+  \hspace{1mm}
+  \begin{minipage}[b]{1.2cm}
+    \flushleft \small \garamond \bfseries
+    github \\ \vspace{2pt}
+    linkedin \\ \vspace{2pt}
+    phone \\ \vspace{2pt}
+    web \\ \vspace{2pt}
+    email
+  \end{minipage}
+\end{adjustwidth}
+
+\begin{adjustwidth}{-\marginparsep-\marginparwidth}{}
+  \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+    \rule{\columnwidth}{1pt}%
+  \end{minipage}
+\end{adjustwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Synopsis
+
+\section{Synopsis}
+
+{\garamond An algorithmically minded individual who reveres the indefinite %
+  complexity of the universe and the human mind with a lifelong quest to %
+  understand neural networks and their silicon counterparts. A never-ending %
+  curiosity and passioning for engineering and robotics and strong admiration %
+  for the field of Computer Science as a whole.}
+
+% Academia
+
+\section{Academia}
+
+{\garamond \href{https://www.pw.edu.pl/}
+{\bfseries Politechnika Warszawska}, Warsaw, PL}
+\hfill {\garamond \slshape 2015 -- present}
+\begin{outerlist}
+  \item[] {\garamond \slshape B.Sc., Computer Science}
+\end{outerlist}
+
+% Programming
+
+\section{Programming}
+
+{\garamond C/C++ \textsl{(preferred: several ten thousand lines)}; Python; %
+  Verilog; Java}
+
+% Noteworthy Projects
+
+\section{Noteworthy Projects}
+
+{\garamond \href{https://github.com/ServerTech/elise}{\bfseries Elise}} 
+\enskip {\garamond \slshape control automation for ROVs and multirotors on %
+          embedded platforms}
+\hfill {\garamond \slshape ongoing}
+\begin{innerlist}
+  \item {\garamond Designed for AHTI, an underwater ROV.}
+  \item {\garamond Scalable and adaptable to multirotors and related %
+          platforms.}
+  \item {\garamond Multithreading capable to maximise performance of embedded %
+          platforms.}
+  \item {\garamond Handles a plethora of sensors, including inertial %
+          measurement for PID control.}
+  \item {\garamond Self-stabilisation and movement algorithms.}
+  \item {\garamond Integral displacement calculation.}
+\end{innerlist}
+
+{\garamond \href{https://github.com/ServerTech/cortex}{\bfseries Cortex}}
+\enskip {\garamond \slshape fast and lightweight bitboard UCI chess engine %
+          in C++}
+\hfill {\garamond \slshape December 2014}
+\begin{innerlist}
+  \item {\garamond Minimax with alpha-beta pruning.}
+  \item {\garamond Uses processor-native 64-bit integers, or 'bitboards'.}
+  \item {\garamond GCC's low level assembly: incredibly fast move generation.}
+  \item {\garamond Move search efficiency using simple heuristics such as 
+          MVV-LVA.}
+  \item {\garamond Zobrist hashing and transposition tables for efficient %
+          search.}
+  \item {\garamond Simple, but effective static evaluation for roughly 2000 
+          elo.}
+  \item {\garamond Universal Chess Interface (UCI) GUI protocol supported.}
+  \item {\garamond Intended to be upgraded to self-learning using dynamic %
+          evaluation.}
+\end{innerlist}
+
+{\garamond \href{https://github.com/ServerTech/neptune}{\bfseries Neptune}}
+\enskip {\garamond \slshape 16-bit custom RISC architecture microprocessor in %
+          Verilog}
+\hfill {\garamond \slshape October 2013}
+\begin{innerlist}
+  \item {\garamond Originally designed on a Xilinx Spartan 6 FPGA.}
+  \item {\garamond Microcoded by hand atop a custom MIPS-like architecture.}
+  \item {\garamond Handmade serial display segments with custom protocols.}
+  \item {\garamond Human-readable instruction set.}
+  \item {\garamond Intended to teach introductory assembly to fellow students.}
+\end{innerlist}
+
+\vspace{-3mm}
+
+% Noteworthy Miscellaneous
+
+\section{Noteworthy Miscellaneous}
+
+{\garamond \href{https://www.marinetech.org/rov-competition-2/}%
+  {\bfseries MATE Underwater Robotics Competition}, \slshape Long Beach, %
+  CA, US}
+\hfill {\garamond \slshape upcoming}
+\begin{innerlist}
+  \item {\garamond Team member of the \href{http://sknrp.meil.pw.edu.pl/}%
+          {Students Underwater Robotics Association}.}
+  \item {\garamond Responsible for control software, electronics and %
+          automation.}
+  \item {\garamond PID control from inertial measurement.}
+  \item {\garamond Custom-built PCBs for power and sensors.}
+  \item {\garamond Responsible for ROV control during the competition.}
+\end{innerlist}
+
+{\garamond%
+  \href{%
+  https://www.coursera.org/account/accomplishments/certificate/8QFCMALZAB}%
+  {\bfseries An Introduction to Interactive Programming in Python}}
+\hfill {\garamond \slshape November 2014}
+\begin{outerlist}
+\item[] {\garamond \slshape Rice University on Coursera, 100\%}
+\end{outerlist}
+
+% Interests
+
+\section{Interests}
+
+{\garamond Artificial Intelligence; machine learning; behavioural psychology; %
+  philosophy; chess; writing; algorithmic, mathematical thinking; and %
+  curiosity with a passion}
+
+\newpage
+
+% Professional
+
+\section{Professional}
+
+{\garamond \bfseries Freelance writing} \enskip {\garamond \slshape as a hobby}
+\hfill {\garamond \slshape 2013 -- 2014}
+\vspace{3mm}
+
+{\garamond \href{https://hostus.us}{\bfseries HostUS}}
+\enskip {\garamond \slshape web-hosting services}
+\hfill {\garamond \slshape 2012}
+\vspace{-1mm}
+\begin{outerlist}
+  \item[] {\garamond \slshape Systems Administrator}
+  \vspace{-3mm}
+  \begin{innerlist}
+    \item {\garamond Systems administration during the company's genesis.}
+  \end{innerlist}
+  \vspace{-3mm}
+\end{outerlist}
+
+% Lingustics
+
+\section{Linguistics}
+
+{\garamond \href{https://www.ielts.org/}{\bfseries International English %
+  Language Testing System (IELTS)}}
+\hfill {\garamond \slshape November 2014}
+\begin{outerlist}
+  \item[] {\garamond \slshape Reading: 9.0 \enskip Listening: 9.0 \enskip %
+            Writing: 7.5 \enskip Speaking: 8.5 \enskip Overall: 8.5}
+  \item[] {\garamond \slshape Others: Hindi; Malayalam; and Marathi}
+\end{outerlist}
+
+% Personal
+
+\section{Personal}
+
+{\garamond Born \enskip \slshape 19 December, circa. 1997} \qquad
+{\garamond Nationality \enskip \slshape Indian} \hfill
+\vspace{3mm}
+
+\end{document}
